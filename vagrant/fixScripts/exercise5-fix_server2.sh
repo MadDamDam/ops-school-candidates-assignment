@@ -6,6 +6,6 @@ echo '    StrictHostKeyChecking no' | sudo tee --append /etc/ssh/ssh_config > /d
 echo '    UserKnownHostsFile=/dev/null' | sudo tee --append /etc/ssh/ssh_config > /dev/null
 
 # server2 already has public key defined
-#sudo su - vagrant -c "ssh-keygen -t rsa -N '' -f /home/vagrant/.ssh/id_rsa"
-sudo apt-get --assume-yes install sshpass
-sshpass -p 'vagrant' ssh-copy-id vagrant@server2
+mv /vagrant/id_rsa* /home/vagrant/.ssh/
+cat /home/vagrant/.ssh/id_rsa.pub >> /home/vagrant/.ssh/authorized_keys
+
