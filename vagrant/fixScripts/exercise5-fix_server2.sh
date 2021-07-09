@@ -7,5 +7,6 @@ echo '    UserKnownHostsFile=/dev/null' | sudo tee --append /etc/ssh/ssh_config 
 
 # server2 already has public key defined
 mv /vagrant/id_rsa* /home/vagrant/.ssh/
+chmod 600 /home/vagrant/.ssh/id_rsa*
 cat /home/vagrant/.ssh/id_rsa.pub >> /home/vagrant/.ssh/authorized_keys
 
